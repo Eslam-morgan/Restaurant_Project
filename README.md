@@ -9,7 +9,7 @@ This repository is for collaborative development of the Restaurant Project. All 
 Clone the repository:
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/Eslam-morgan/Restaurant_Project.git
 cd Restaurant_Project
 ```
 
@@ -52,6 +52,8 @@ git pull origin main
 ### Step 2: Create a branch
 
 ```bash
+git switch -c feature/task-name
+Ex:
 git switch -c feature/menu-page
 ```
 
@@ -70,6 +72,8 @@ git diff
 
 ```bash
 git add .
+git commit -m "feat: What have you done"
+Ex:
 git commit -m "feat: add menu page"
 ```
 
