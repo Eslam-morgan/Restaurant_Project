@@ -1,0 +1,70 @@
+/* Bites – design tokens (Light + Dark)
+   Dark mode: add class="dark" (or data-theme="dark") on <html>,
+   or let the OS decide via prefers-color-scheme. */
+
+:root {
+  /* Brand */
+  --primary: #8B1E2D;          /* buttons, logo, active tab */
+  --primary-hover: #6A1522;
+  --primary-soft: #FBE9E7;     /* tinted backgrounds, chips, icon circles */
+  --primary-text: #8B1E2D;     /* links / text on page background */
+  --on-primary: #FFFFFF;
+
+  --secondary: #F5A623;        /* reservation buttons, stars, highlights */
+  --secondary-hover: #D98E10;
+  --on-secondary: #2A1A18;
+
+  /* Neutrals */
+  --bg: #FFFAF3;               /* page */
+  --surface: #FFFFFF;          /* cards */
+  --surface-2: #FBF3EA;        /* nested areas */
+  --border: #EFE3DA;
+  --text: #2A1A18;
+  --text-muted: #7A6A66;
+
+  /* Status */
+  --success: #2F855A;
+  --danger: #D64545;
+}
+
+.dark,
+[data-theme="dark"] {
+  --primary: #B52A3F;
+  --primary-hover: #D13A50;
+  --primary-soft: #3A1A20;
+  --primary-text: #F0788A;     /* lighter for readable text on dark */
+  --on-primary: #FFFFFF;
+
+  --secondary: #FFB84D;
+  --secondary-hover: #FFC873;
+  --on-secondary: #2A1A18;
+
+  --bg: #16100F;
+  --surface: #211817;
+  --surface-2: #2B201F;
+  --border: #3A2C2A;
+  --text: #F6ECE8;
+  --text-muted: #B5A29D;
+
+  --success: #48BB78;
+  --danger: #F26B6B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not([data-theme="light"]) {
+    --primary: #B52A3F;
+    --primary-hover: #D13A50;
+    --primary-soft: #3A1A20;
+    --primary-text: #F0788A;
+    --secondary: #FFB84D;
+    --secondary-hover: #FFC873;
+    --bg: #16100F;
+    --surface: #211817;
+    --surface-2: #2B201F;
+    --border: #3A2C2A;
+    --text: #F6ECE8;
+    --text-muted: #B5A29D;
+    --success: #48BB78;
+    --danger: #F26B6B;
+  }
+}
