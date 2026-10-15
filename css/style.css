@@ -1,4 +1,8 @@
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 :root {
   /* Brand */
   --primary: #8B1E2D;          /* buttons, logo, active tab */
