@@ -28,59 +28,98 @@
   --danger: #D64545;
 }
 
+
 #chefs {
-    padding: 60px 8%;
-    background-color: var(--bg);
-    text-align: left;
+  padding: 60px 5%;
+  overflow: hidden;
 }
 
 #chefs h1 {
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 32px;
-    text-align: left;
-    
+  color: #8B1E2D;
+  font-size: 2rem;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
-.chef-container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
+.chefs-slider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.chef-container .container {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
+.chefs-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.chef-container .container img {
-    display: block;
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
+.chefs-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.45s ease;
+  will-change: transform;
 }
 
-.chef-container .container span {
-    display: block;
-    padding: 16px 8px;
-    color: var(--text);
-    font-weight: 600;
-    font-size: 20px;
+.chef-card {
+  flex: 0 0 calc((100% - 60px) / 4);
+  min-width: 0;
+  text-align: center;
+}
+
+.chef-card img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.chef-card h3 {
+  color: #8B1E2D;
+  margin: 15px 0 5px;
+}
+
+.chef-card p {
+  color: #777;
+  margin: 0;
+}
+
+.chef-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #8B1E2D;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chef-arrow:hover {
+  background: #641522;
 }
 
 @media (max-width: 768px) {
-    .chef-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .chef-card {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+
+  .chef-card img {
+    height: 240px;
+  }
 }
 
 @media (max-width: 480px) {
-    .chef-container {
-        grid-template-columns: 1fr;
-    }
+  .chef-card {
+    flex-basis: 100%;
+  }
+
+  .chef-card img {
+    height: 300px;
+  }
 }
+
 
 .footer {
     background-color: var(--text);
